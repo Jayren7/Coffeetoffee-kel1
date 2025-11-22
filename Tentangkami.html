@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tentang Kami - Coffee Toffee</title>
+<style>
+  :root {
+    --max: 1100px;
+    --accent: #f2b400;
+    --muted: #9a9a9a;
+    --text: #222;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* HEADER & NAV */
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+
+  header .logo img {
+    height: 46px;
+    display: block;
+  }
+
+  /* NAVIGATION */
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 22px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--muted);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 12.8px;
+    letter-spacing: 0.4px;
+    transition: color 0.2s ease;
+    text-transform: uppercase;
+  }
+
+  nav a:hover {
+    color: var(--accent);
+  }
+
+  nav a.active {
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .header-inner {
+      flex-direction: column;
+      padding: 15px 0;
+    }
+    
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+  }
+
+  /* FOOTER */
+  footer {
+    background: transparent;
+    color: #ccc;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 80px;
+  }
+
+  .copyright {
+    background: transparent;
+    padding: 30px 20px;
+    font-size: 14px;
+    margin: 0;
+    color: #666;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    background: #111;
+    padding: 25px 20px;
+    font-size: 13px;
+    color: #999;
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    margin: 8px 0;
+  }
+
+  .footer-bottom strong {
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .footer-bottom {
+      padding: 20px 15px;
+    }
+  }
+
+  /* SUB NAVBAR */
+  .sub-navbar {
+    background-color: #111;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 60px;
+  }
+
+  .sub-navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #f9b000;
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .sub-navbar-left img {
+    width: 18px;
+  }
+
+  .sub-navbar-right a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  .sub-navbar-right a:hover,
+  .sub-navbar-right a.active {
+    color: #f9b000;
+  }
+
+  /* ANIMASI SCROLL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ABOUT */
+  .about-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+  }
+
+  .about-section h4 {
+    color: #f9b000;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .about-section h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 18px;
+  }
+
+  .about-section .underline {
+    width: 70px;
+    height: 8px;
+    background-color: #f9b000;
+    margin: 0 auto 20px;
+  }
+
+  .about-section p {
+    color: #7a7a7a;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* CERITA KAMI */
+  .story-section {
+    background-color: #fff;
+    padding: 90px 120px;
+  }
+
+  .story-section h4 {
+    color: #f9b000;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .story-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #a0a0a0;
+    margin-bottom: 25px;
+  }
+
+  .story-section .underline {
+    width: 110px;
+    height: 8px;
+    background-color: #f9b000;
+    margin-bottom: 25px;
+  }
+
+  .story-section p {
+    color: #8a8a8a;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 850px;
+  }
+
+  /* YES SECTION */
+  .yes-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 100px 120px;
+    background-color: #fff;
+  }
+
+  .yes-section img {
+    width: 380px;
+    border: 4px solid #000;
+  }
+
+  .yes-text {
+    flex: 1;
+    color: #8a8a8a;
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .yes-highlight {
+    background-color: #f9b000;
+    color: white;
+    padding: 30px;
+    margin-top: 30px;
+  }
+
+  .yes-highlight h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  /* COFFEE EXPERTISE */
+  .expertise-section {
+    background-color: #fff;
+    padding: 90px 120px;
+  }
+
+  .expertise-header {
+    text-align: left;
+    margin-bottom: 50px;
+  }
+
+  .expertise-header h1 {
+    color: #a0a0a0;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .expertise-header .underline {
+    width: 110px;
+    height: 8px;
+    background-color: #f9b000;
+  }
+
+  .expertise-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  .expertise-item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+  }
+
+  .expertise-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 4px solid #000;
+  }
+
+  .expertise-item h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+
+  .expertise-item p {
+    color: #8a8a8a;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* THE PEOPLE */
+  .people-section {
+    background-color: #fff;
+    padding: 100px 50px;
+    text-align: center;
+  }
+
+  .people-header h4 {
+    color: #f9b000;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .people-header h1 {
+    color: #a0a0a0;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .people-header .underline {
+    width: 80px;
+    height: 8px;
+    background-color: #f9b000;
+    margin: 0 auto 60px;
+  }
+
+  .people-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .person {
+    flex: 1 1 calc(25% - 40px);
+    max-width: 260px;
+    min-width: 240px;
+    position: relative;
+  }
+
+  .person-img {
+    position: relative;
+    overflow: hidden;
+    border: 4px solid #000;
+  }
+
+  .person-img img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(249,176,0,0.7);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .person:hover .overlay {
+    opacity: 1;
+  }
+
+  .person:hover img {
+    transform: scale(1.08);
+  }
+
+  .person h3 {
+    margin-top: 18px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+  }
+
+  .person .role {
+    font-weight: 600;
+    color: #7a7a7a;
+    margin-bottom: 15px;
+  }
+
+  .person .quote {
+    color: #8a8a8a;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* PENCAPAIAN */
+  .achievement-section {
+    background-color: #fff;
+    padding: 100px 120px;
+  }
+
+  .achievement-header h4 {
+    color: #f9b000;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .achievement-header h1 {
+    color: #a0a0a0;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .achievement-header .underline {
+    width: 110px;
+    height: 8px;
+    background-color: #f9b000;
+    margin-bottom: 25px;
+  }
+
+  .achievement-header p {
+    color: #8a8a8a;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 850px;
+    margin-bottom: 50px;
+  }
+
+  .achievement-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .achievement-item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+  }
+
+  .achievement-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 4px solid #000;
+    margin-bottom: 15px;
+    transition: .4s;
+  }
+
+  .achievement-item img:hover {
+    transform: scale(1.03);
+  }
+
+  .achievement-item h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 8px;
+  }
+
+  .achievement-item p {
+    color: #8a8a8a;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  @media(max-width:900px){
+  .story-section, .yes-section, .expertise-section, .people-section, .achievement-section {
+    padding: 60px 30px;
+  }
+  
+  .yes-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .expertise-grid, .achievement-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .people-grid {
+    justify-content: center;
+  }
+  .person {
+    flex: 1 1 calc(50% - 40px);
+    max-width: 300px;
+  }
+}
+
+/* === JEJARING KERJA SECTION === */
+.network-section {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Bagian abu-abu atas */
+.network-header-bg {
+  width: 100vw;
+  background: #e5e5e5;
+  padding: 80px 0 60px;
+  margin-left: calc(50% - 50vw);
+}
+
+.network-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #2b2b2b;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.network-sub {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8b8b8b;
+  letter-spacing: 2px;
+}
+
+/* Deretan logo */
+.network-logos {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 60px 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: #fff;
+}
+
+.network-logos img {
+  width: 160px;
+  height: auto;
+  filter: grayscale(100%);
+  transition: 0.3s ease;
+}
+.network-logos img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Footer kecil di bawah logo */
+.network-footer {
+  font-size: 12px;
+  color: #8f8f8f;
+  margin-top: 20px;
+}
+
+.powered {
+  font-size: 12px;
+  color: #bcbcbc;
+}
+
+.powered b {
+  color: #555;
+}
+
+.report {
+  font-size: 11px;
+  text-decoration: underline;
+  color: #8f8f8f;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+/* Tombol bulat scroll ke atas */
+.scroll-circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,.18);
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 22px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  transition: .25s;
+}
+.scroll-circle:hover {
+  transform: scale(1.1);
+}
+
+/* Responsif */
+@media(max-width: 768px){
+  .network-logos {
+    gap: 30px;
+    padding: 40px 20px;
+  }
+  .network-logos img {
+    width: 100px;
+  }
+  .network-title {
+    font-size: 24px;
+  }
+}
+
+@media(max-width:600px){
+  .person {
+    flex: 1 1 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="container header-inner">
+        <a href="Home.html" class="logo"><img src="Img/logo.png" alt="Coffee Toffee Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="Kopi.html">KOPI</a></li>
+                <li><a href="Menu.html">MENU</a></li>
+                <li><a href="Layanan.html">LAYANAN</a></li>
+                <li><a href="Peluang.html">PELUANG</a></li>
+                <li><a href="Member.html">MEMBER</a></li>
+                <li><a href="Kampanye.html">KAMPANYE</a></li>
+                <li><a href="Berita.html">BERITA</a></li>
+                <li><a href="Tentang.html" class="active">TENTANG KAMI</a></li>
+                <li><a href="Kontak.html">KONTAK</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- SUB NAVBAR -->
+<div class="sub-navbar">
+  <div class="sub-navbar-left">
+    <img src="https://coffeetoffee.co.id/wp-content/uploads/2021/05/arrow-up-icon.png" alt="">
+    <span>KEMBALI KE ATAS</span>
+  </div>
+  <div class="sub-navbar-right">
+    <a href="#" class="active">CERITA KAMI</a>
+    <a href="#">KEAHLIAN</a>
+    <a href="#">ORANG</a>
+    <a href="#">PENCAPAIAN</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <h4>ABOUT US</h4>
+  <h1>TENTANG KAMI</h1>
+  <div class="underline"></div>
+  <p>INI ADALAH MENGENAI CERITA DAN PERJALANAN KAMI, APA YANG KAMI LAKUKAN, SERTA ORANG - ORANG DI BELAKANG BRAND COFFEE TOFFEE</p>
+</section>
+
+<!-- CERITA KAMI -->
+<section class="story-section reveal">
+  <h4>OUR STORY</h4>
+  <h1>CERITA KAMI</h1>
+  <div class="underline"></div>
+  <p>Kami adalah perusahaan kopi yang mendedikasikan seluruh gairah, kecintaan, dan antusiasme kami kepada dunia kopi yang menakjubkan...</p>
+</section>
+
+<!-- YES I DRINK INDONESIAN COFFEE -->
+<section class="yes-section reveal">
+  <img src="Img/tentang kami1.png" alt="">
+  <div class="yes-text">
+    <p>Kami tahu, begitu juga Anda, bahwa biji-biji kopi terbaik dunia berasal dari Indonesia...</p>
+    <div class="yes-highlight">
+      <h3>SEKARANG</h3>
+      <p>Kami menawarkan kepada Anda yang mempunyai gairah dan kecintaan yang sama dengan kami kepada dunia kopi, sebuah bisnis yang fun dan penuh lifestyle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COFFEE EXPERTISE -->
+<section class="expertise-section reveal">
+  <div class="expertise-header">
+    <h1>COFFEE EXPERTISE</h1>
+    <div class="underline"></div>
+  </div>
+  <div class="expertise-grid">
+    <div class="expertise-item">
+      <img src="Img/tk2.png">
+      <h3>PROCESSING FACILITIES</h3>
+      <p>Roasting House</p>
+    </div>
+    <div class="expertise-item">
+      <img src="Img/tk3.png">
+      <h3>INDUSTRY NETWORK</h3>
+      <p>National Coffee Judges</p>
+    </div>
+    <div class="expertise-item">
+      <img src="Img/tk4.png">
+      <h3>EVERYTHING START FROM THE ROOT</h3>
+      <p>Carefully Selected Grade A Coffee Beans</p>
+    </div>
+    <div class="expertise-item">
+      <img src="Img/tk5.png">
+      <h3>TRAINING CENTER</h3>
+      <p>Espresso Lab Barista Training Center</p>
+    </div>
+    <div class="expertise-item">
+      <img src="Img/tk 6.png">
+      <h3>QUALITY CONTROL</h3>
+      <p>Certified Cupper</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE PEOPLE -->
+<section class="people-section reveal">
+  <div class="people-header">
+    <h4>THE PEOPLE</h4>
+    <h1>ORANG - ORANG DI BELAKANG MERK</h1>
+    <div class="underline"></div>
+  </div>
+  <div class="people-grid">
+    <div class="person">
+      <div class="person-img">
+        <img src="Img/tk profil 1.png">
+        <div class="overlay"></div>
+      </div>
+      <h3>ODI ANINDITO</h3>
+      <p class="role">FOUNDER - CEO</p>
+      <p class="quote">"Coffee Toffee bukan hanya sekedar kopi, tapi apa yang kami lakukan disini adalah mengenai memberikan kebanggan terhadap kopi indonesia"</p>
+    </div>
+    <div class="person">
+      <div class="person-img">
+        <img src="Img/tk profil 2.png">
+        <div class="overlay"></div>
+      </div>
+      <h3>RAKHMA SINSERIA</h3>
+      <p class="role">CFO (Chief Financial Officer)</p>
+      <p class="quote">Love, Live, Coffee..</p>
+    </div>
+    <div class="person">
+      <div class="person-img">
+        <img src="Img/tk profil 3.png">
+        <div class="overlay"></div>
+      </div>
+      <h3>ZAI ACHMAD</h3>
+      <p class="role">CXO (Chief Expansion Officer)</p>
+      <p class="quote">Roast and make the best of your possible cup of coffee with all your heart, that's what we called as a perfect cup of coffee Coffee Toffee bukan hanya sekedar kopi, tapi apa yang kami lakukan disini adalah mengenai memberikan kebanggan terhadap kopi indonesia</p>
+    </div>
+    <div class="person">
+      <div class="person-img">
+        <img src="Img/tk profil 4.png">
+        <div class="overlay"></div>
+      </div>
+      <h3>SISWANTO (PAK DHE)</h3>
+      <p class="role">COFFEE EXPERT & RND</p>
+      <p class="quote">Apapun situasinya yang saya tahu saya harus tetap melakukan yang terbaik. Berkaryalah dengan Hati agar bisa memberikan sesuatu yang bermanfaat.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PENCAPAIAN -->
+<section class="achievement-section reveal">
+  <div class="achievement-header">
+    <h4>RECOGNITION AND AWARDS</h4>
+    <h1>PENCAPAIAN</h1>
+    <div class="underline"></div>
+    <p>Coffee Toffee Indonesia sebagai merek kopi lokal tanah 
+      air tak henti-hentinya berusaha mengupayakan yang terbaik 
+      dan memberikan kebanggaan atas pencapaian prestasinya</p>
+  </div>
+
+  <div class="achievement-grid">
+    <div class="achievement-item">
+      <img src="Img/p1.png">
+      <h3>2011 - SCALE UP COFFEE SHOP</h3>
+    </div>
+    <div class="achievement-item">
+      <img src="Img/p2.png">
+      <h3>2014 - SECOND LARGEST COFFEE SHOP CHAIN</h3>
+    </div>
+    <div class="achievement-item">
+      <img src="Img/p3.png">
+      <h3>2015 - PASS ENDEAVOR LOCAL AND INTERNATIONAL SELECTION PANEL </h3>
+    </div>
+    <div class="achievement-item">
+      <img src="Img/p4.png">
+      <h3>2015 - TOP OF MIND BRAND AWARDS</h3>
+    </div>
+    <div class="achievement-item">
+      <img src="Img/p5.png">
+      <h3>2016 - PENGHARGAAN WARALABA INDONESIA (PWI) - KATEGORI WARALABA UTAMA
+</h3>
+    </div>
+
+    <!-- JEJARING KERJA -->
+<section class="network-section">
+  <div class="network-header-bg">
+    <h2 class="network-title">JEJARING KERJA</h2>
+    <p class="network-sub">IN ASSOCIATION OF</p>
+  </div>
+
+  <div class="network-logos">
+    <img src="Img/l1.png" alt="Logo 1">
+    <img src="Img/l2.png" alt="Logo 2">
+    <img src="Img/l3.png" alt="Logo 3">
+    <img src="Img/l4.png" alt="Logo 4">
+    <img src="Img/l5.png" alt="Logo 5">
+    <img src="Img/l6.png" alt="Logo 6">
+  </div>
+
+  </div>
+</section>
+
+<footer>
+    <p class="copyright">© 2020 All rights reserved.</p>
+    <div class="footer-bottom">
+        <p>Powered by <strong>Bitrix24</strong>. Create websites online</p>
+        <p style="color: #777; font-size: 12px; margin-top: 5px;">Report abuse</p>
+    </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+  window.addEventListener("scroll", () => {
+    reveals.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) el.classList.add("visible");
+    });
+  });
+</script>
+</body>
+</html>

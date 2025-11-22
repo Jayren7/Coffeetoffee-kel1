@@ -1,0 +1,1191 @@
+/* ==============================
+   GLOBAL & RESET
+============================== */
+:root {
+  --max: 1100px;
+  --accent: #f2b400;
+  --muted: #9a9a9a;
+  --text: #222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==============================
+   HEADER & NAV
+============================== */
+header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+header .logo img {
+  height: 46px;
+  display: block;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 22px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12.8px;
+  letter-spacing: 0.4px;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+}
+
+/* ==============================
+   HERO SECTION
+============================== */
+.hero-peluang {
+  text-align: center;
+  padding: 70px 20px 50px;
+  background: #fafafa;
+}
+
+.kicker {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.hero-peluang h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.underline {
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin: 15px auto 25px;
+  border-radius: 2px;
+}
+
+.hero-desc {
+  color: #777;
+  font-size: 14px;
+  max-width: 760px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+
+/* Icons Row Section */
+.icons-row-wrapper {
+  background: #fff;
+  padding: 40px 20px;
+  margin: 60px auto;
+  max-width: var(--max);
+}
+
+.icons-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-decoration: none; /* Hapus underline */
+}
+
+.icon-item:hover {
+  transform: translateY(-5px);
+}
+
+.icon-box {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.icon-item:hover .icon-box {
+  transform: scale(1.1);
+}
+
+.icon-box i {
+  font-size: 50px;
+}
+
+.icon-label {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label-top {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+  letter-spacing: 0.5px;
+}
+
+.label-bottom {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.divider {
+  width: 1px;
+  height: 60px;
+  background-color: #ddd;
+}
+
+/* ==============================
+   SECTION STYLES
+============================== */
+.section {
+  padding: 70px 20px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section .underline {
+  margin-bottom: 30px;
+}
+
+.sub-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.muted {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ==============================
+   TWO COLUMN LAYOUT
+============================== */
+.two-col {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.col {
+  flex: 1;
+}
+
+.placeholder-image {
+  background: #e8e8e8;
+  height: 100%;
+  min-height: 650px;
+  margin-top: 0px;
+}
+
+.placeholder-image.small {
+  height: 180px;
+}
+
+/* ==============================
+   FORM STYLES
+============================== */
+.form-aside {
+  max-width: 400px;
+}
+
+.form-aside h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.form-box {
+  background: #fff;
+  padding: 25px;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.form-box input[type="text"],
+.form-box input[type="email"],
+.form-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.form-box textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.file {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+.file input[type="file"] {
+  margin-left: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  width: 100%;
+}
+
+.btn.primary:hover {
+  background: #e3a800;
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   FORM LABEL & FILE UPLOAD STYLES
+============================== */
+.form-box label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
+}
+
+.form-box label input,
+.form-box label textarea {
+  margin-top: 0;
+  width: 100%;
+}
+
+/* Override input styling di form-box */
+.form-box input[type="text"],
+.form-box input[type="email"],
+.form-box textarea {
+  margin-bottom: 0;
+  padding: 12px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-box input[type="text"]:focus,
+.form-box input[type="email"]:focus,
+.form-box textarea:focus {
+  background: #fff;
+  border-color: #ddd;
+  outline: none;
+}
+
+.form-box input[type="text"]::placeholder,
+.form-box input[type="email"]::placeholder,
+.form-box textarea::placeholder {
+  color: #999;
+  font-size: 13px;
+}
+
+.form-box textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.file-upload {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.file-upload-label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.file-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 0;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #999;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.file-btn:hover {
+  background: #ececec;
+  border-color: #ccc;
+}
+
+/* ==============================
+   LOWONGAN SECTION
+============================== */
+.lowongan-hero {
+  background: #f5f5f5;
+  padding: 70px 20px 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.lowongan-hero .section-title {
+  font-size: 42px;
+}
+
+.lowongan-section {
+  background: #fff;
+  padding: 0;
+}
+
+.lowongan-section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 20px;
+}
+
+.lowongan-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: left;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.lowongan-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #888;
+  text-align: left;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.lowongan-underline {
+  width: 60px;
+  height: 5px;
+  background-color: #fbbf24;
+  margin: 0 0 25px 0;
+  border-radius: 5px;
+}
+
+.lowongan-desc {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 0 40px 0;
+  text-align: left;
+}
+
+/* ==============================
+   FEATURE GRID
+============================== */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.feature-item {
+  text-align: center;
+}
+
+.feature-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.feature-item h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.feature-item p {
+  font-size: 13px;
+  color: #777;
+}
+
+/* ==============================
+   SUPLIER SECTION
+============================== */
+.suplier-hero {
+  background: #f5f5f5;
+  padding: 70px 20px 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.suplier-hero .section-title {
+  font-size: 42px;
+}
+
+.suplier-section {
+  background: #fff;
+  padding: 0;
+}
+
+.suplier-section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 20px;
+}
+
+.suplier-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: left;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.suplier-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #888;
+  text-align: left;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.suplier-underline {
+  width: 60px;
+  height: 5px;
+  background-color: #fbbf24;
+  margin: 0 0 25px 0;
+  border-radius: 5px;
+}
+
+.suplier-desc {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 0 50px 0;
+  text-align: left;
+}
+
+.suplier-section .feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 40px 0 50px;
+}
+
+.suplier-section .feature-item {
+  text-align: left;
+}
+
+.suplier-section .feature-item img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 0px;
+  margin-bottom: 25px;
+}
+
+.suplier-section .feature-item h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #333;
+  text-align: left;
+}
+
+.suplier-section .feature-item p {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* ==============================
+   LOKASI SECTION
+============================== */
+.lokasi-section {
+  background: #fff;
+  padding: 0;
+}
+
+.lokasi-hero {
+  background: #f5f5f5;
+  padding: 70px 20px 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.lokasi-hero .section-title {
+  font-size: 42px;
+}
+
+.lokasi-section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 20px;
+}
+
+.lokasi-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #888;
+  text-align: left;
+  margin: 40px 0 10px;
+  text-transform: uppercase;
+}
+
+.lokasi-underline {
+  width: 60px;
+  height: 5px;
+  background-color: #fbbf24;
+  margin: 0 0 25px 0;
+  border-radius: 5px;
+}
+
+.lokasi-desc {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 1200px;
+  margin: 0 0 50px 0;
+  text-align: left;
+}
+
+.lokasi-section .form-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.lokasi-section .img-box {
+  flex: 1;
+  min-height: 400px;
+  background: linear-gradient(135deg, #ddd 0%, #bbb 100%);
+}
+
+.lokasi-section .form-box {
+  flex: 1;
+  padding: 50px 40px;
+  border: none;
+  box-shadow: none;
+  text-align: center;
+}
+
+.lokasi-section .form-box h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #222;
+  font-weight: 700;
+}
+
+.lokasi-section .form-box p {
+  color: #777;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.lokasi-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lokasi-section input,
+.lokasi-section textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.lokasi-section textarea {
+  height: 100px;
+  resize: none;
+}
+
+.lokasi-section button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lokasi-section button:hover {
+  background: #e3a800;
+  transform: translateY(-2px);
+}
+
+/* ====== BUSINESS PARTNERS SECTION ====== */
+.business-partners {
+  background-color: #fff;
+  padding: 100px 10%;
+  text-align:left;
+  color: #555;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-peluang h1 {
+  font-size: 42px;
+}
+
+.partners-header h4 {
+  color: #fbbf24;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.partners-header h2 {
+  font-size: 2.4rem;
+  color: #888;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.partners-header p {
+  max-width: 1400px;
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #777;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px 70px;
+  margin-top: 70px;
+  text-align: left;
+}
+
+.partner-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.partner-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.partner-info {
+  flex: 1;
+}
+
+.partner-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.partner-title h3 {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.price {
+  background-color: #fbbf24;
+  color: #fff;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.partner-info p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.partner-notes {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 25px 20px 40px;
+  border-radius: 0;
+  position: relative;
+}
+
+.partner-notes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+}
+
+.partner-notes p {
+  color: #999;
+  font-size: 13px;
+  line-height: 2;
+  margin: 0;
+  padding-left: 15px;
+  position: relative;
+  font-weight: 400;
+}
+
+.partner-notes p::before {
+  content: "*";
+  position: absolute;
+  left: 0;
+  color: #999;
+  font-weight: 400;
+}
+
+/* ==============================
+   STEPS SECTION
+============================== */
+.steps {
+  background: #0d0b1a;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.steps .kicker {
+  color: var(--accent);
+  letter-spacing: 3px;
+}
+
+.steps .section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.steps .underline {
+  background: var(--accent);
+  margin-bottom: 50px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step {
+  background: #1b192b;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  background: #252332;
+  transform: translateY(-4px);
+}
+
+.icon {
+  background: var(--accent);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.step h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.step p {
+  font-size: 13px;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* ==============================
+   MASUKAN FORM SECTION
+============================== */
+.masukan {
+  background: #fafafa;
+  padding: 70px 20px;
+}
+
+.form-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.img-box {
+  flex: 1;
+  min-height: 400px;
+  background: linear-gradient(135deg, #ddd 0%, #bbb 100%);
+}
+
+.form-container .form-box {
+  flex: 1;
+  padding: 50px 40px;
+  border: none;
+  box-shadow: none;
+  text-align: center;
+}
+
+.form-container h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #222;
+  font-weight: 700;
+}
+
+.form-container p {
+  color: #777;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.form-container textarea {
+  height: 100px;
+  resize: none;
+}
+
+.form-container button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-container button:hover {
+  background: #e3a800;
+  transform: translateY(-2px);
+}
+
+/* FOOTER */
+footer {
+  background: transparent;
+  color: #ccc;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 80px;
+}
+
+.copyright {
+  background: transparent;
+  padding: 30px 20px;
+  font-size: 14px;
+  margin: 0;
+  color: #666;
+  text-align: center;
+}
+
+.footer-bottom {
+  background: #111;
+  padding: 25px 20px;
+  font-size: 13px;
+  color: #999;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 8px 0;
+}
+
+.footer-bottom strong {
+  color: var(--accent);
+}
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 900px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .partner-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .partner-card img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .partner-title {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .two-col {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .form-aside {
+    max-width: 100%;
+  }
+  
+  .icons-row {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .icon-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: none;
+  }
+  
+  .icon-box {
+    margin: 0;
+  }
+  
+  .icon-label {
+    text-align: left;
+  }
+  
+  .feature-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-container {
+    flex-direction: column;
+  }
+  
+  .img-box {
+    min-height: 200px;
+  }
+
+  .suplier-section .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .suplier-section .form-container {
+    flex-direction: column;
+  }
+  
+  .suplier-section .img-box {
+    min-height: 200px;
+  }
+
+  .lokasi-section .form-container {
+    flex-direction: column;
+  }
+  
+  .lokasi-section .img-box {
+    min-height: 200px;
+  }
+
+  .lowongan-section .two-col {
+    flex-direction: column;
+  }
+  
+  .hero-peluang h1 {
+    font-size: 26px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-peluang {
+    padding: 50px 15px 40px;
+  }
+  
+  .section {
+    padding: 50px 15px;
+  }
+}
+  .icon-box {
+    width: 60px;
+    height: 60px; }
